@@ -9,10 +9,10 @@ import com.zatona.zatona.databinding.FragmentWelcomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-
 class WelcomeFragment : Fragment(R.layout.fragment_welcome) {
     private var _binding: FragmentWelcomeBinding? = null
     private val binding get() = _binding!!
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentWelcomeBinding.bind(view)

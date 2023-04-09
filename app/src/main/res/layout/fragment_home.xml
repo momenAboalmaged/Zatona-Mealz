@@ -74,7 +74,6 @@
             tools:itemCount="2"
             tools:listitem="@layout/home_rv_items" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

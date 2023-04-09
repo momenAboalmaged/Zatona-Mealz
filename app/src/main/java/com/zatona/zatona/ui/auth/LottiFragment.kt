@@ -14,7 +14,6 @@ import com.zatona.zatona.ui.home.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-
 class LottiFragment : Fragment(R.layout.fragment_lotti) {
     private var _binding: FragmentLottiBinding? = null
     private val binding get() = _binding!!

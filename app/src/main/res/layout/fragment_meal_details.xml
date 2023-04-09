@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.MealDetailsFragment"
-    android:background="#E4DBDB">
+    android:background="#E4DBDB"
+    tools:context=".ui.home.MealDetailsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,36 +28,23 @@
                 android:text="Zatona's Chef Details"
                 android:textColor="@color/red"
                 android:textSize="24sp"
-
-
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="wrap_content"
-                android:id="@+id/img"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:backgroundTint="#F1DADA"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_chef">
 
             <ImageView
                 android:id="@+id/meal_iv"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                tools:src="@drawable/olives"
-                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="32dp"
-                />
-            </androidx.cardview.widget.CardView>
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_chef"
+                tools:src="@drawable/olives" />
 
             <TextView
                 android:id="@+id/meal_name"
@@ -72,7 +59,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img" />
+                app:layout_constraintTop_toBottomOf="@id/meal_iv" />
 
             <TextView
                 android:id="@+id/meal_origin"
@@ -86,7 +73,7 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/meal_name"
-                app:layout_constraintTop_toBottomOf="@+id/img" />
+                app:layout_constraintTop_toBottomOf="@id/meal_iv" />
 
             <TextView
                 android:id="@+id/meal_tags"
@@ -100,7 +87,6 @@
                 app:layout_constraintTop_toBottomOf="@id/meal_origin" />
 
 
-
             <TextView
                 android:id="@+id/ingredients_info"
                 android:layout_width="wrap_content"
@@ -111,15 +97,16 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/meal_tags"
                 app:layout_constraintTop_toBottomOf="@id/meal_tags" />
+
             <TextView
                 android:id="@+id/tv_ing_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:text="+ Ingredient 1"
                 android:textColor="@color/red"
                 android:textSize="24sp"
                 android:textStyle="italic"
-                android:layout_margin="4dp"
                 app:layout_constraintStart_toStartOf="@id/meal_tags"
                 app:layout_constraintTop_toBottomOf="@id/ingredients_info" />
 
@@ -128,10 +115,10 @@
                 android:id="@+id/ingredient_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_margin="4dp"
-                android:textSize="18sp"
+                android:padding="10dp"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ing_1"
                 app:layout_constraintStart_toEndOf="@+id/tv_ing_1"
                 app:layout_constraintTop_toBottomOf="@id/ingredients_info"
@@ -141,21 +128,23 @@
                 android:id="@+id/quantity_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_ing_1"
-                app:layout_constraintStart_toEndOf="@id/ingredient_1"
-                app:layout_constraintTop_toBottomOf="@id/ingredients_info"
                 android:layout_margin="4dp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_ing_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ingredient_1"
+                app:layout_constraintTop_toBottomOf="@id/ingredients_info"
                 tools:text="quan 1" />
+
             <TextView
                 android:id="@+id/tv_ing_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:text="+ Ingredient 2"
                 android:textColor="@color/red"
-                android:layout_margin="4dp"
                 android:textSize="24sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@id/meal_tags"
@@ -164,12 +153,12 @@
 
             <TextView
                 android:id="@+id/ingredient_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/black"
+                android:layout_width="64dp"
+                android:layout_height="45dp"
                 android:layout_margin="4dp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ing_2"
                 app:layout_constraintStart_toEndOf="@+id/tv_ing_2"
                 app:layout_constraintTop_toBottomOf="@id/ingredient_1"
@@ -181,10 +170,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:padding="10dp"
-                android:textSize="18sp"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ing_2"
-                app:layout_constraintStart_toEndOf="@id/ingredient_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ingredient_2"
                 app:layout_constraintTop_toBottomOf="@id/quantity_1"
                 tools:text="quan 2" />
 
@@ -192,10 +182,10 @@
                 android:id="@+id/tv_ing_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:text="+ Ingredient 3"
                 android:textColor="@color/red"
                 android:textSize="24sp"
-                android:layout_margin="4dp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@id/meal_tags"
                 app:layout_constraintTop_toBottomOf="@id/tv_ing_2" />
@@ -204,37 +194,38 @@
                 android:id="@+id/ingredient_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:padding="10dp"
-                android:textSize="18sp"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ing_3"
-                app:layout_constraintEnd_toStartOf="@id/quantity_1"
                 app:layout_constraintStart_toEndOf="@id/tv_ing_3"
                 app:layout_constraintTop_toBottomOf="@id/ingredient_2"
-                android:layout_margin="4dp"
                 tools:text="ing 3" />
 
             <TextView
                 android:id="@+id/quantity_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_ing_3"
-                app:layout_constraintStart_toEndOf="@id/ingredient_1"
                 android:layout_margin="4dp"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_ing_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ingredient_3"
                 app:layout_constraintTop_toBottomOf="@id/quantity_2"
                 tools:text="quan 3" />
+
             <TextView
                 android:id="@+id/tv_ing_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:text="+ Ingredient 4"
                 android:textColor="@color/red"
                 android:textSize="24sp"
                 android:textStyle="italic"
-                android:layout_margin="4dp"
                 app:layout_constraintStart_toStartOf="@id/meal_tags"
                 app:layout_constraintTop_toBottomOf="@id/tv_ing_3" />
 
@@ -242,10 +233,10 @@
                 android:id="@+id/ingredient_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_margin="4dp"
-                android:textSize="18sp"
+                android:padding="10dp"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ing_4"
                 app:layout_constraintStart_toEndOf="@+id/tv_ing_4"
                 app:layout_constraintTop_toBottomOf="@id/ingredient_3"
@@ -255,15 +246,15 @@
                 android:id="@+id/quantity_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="17sp"
                 android:layout_margin="4dp"
+                android:padding="10dp"
                 android:textColor="@color/black"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ing_4"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ingredient_4"
                 app:layout_constraintTop_toBottomOf="@id/quantity_3"
                 tools:text="quan 4" />
-
 
 
             <TextView

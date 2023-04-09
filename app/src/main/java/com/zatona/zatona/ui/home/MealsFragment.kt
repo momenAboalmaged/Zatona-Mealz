@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -14,9 +15,8 @@ import com.zatona.zatona.databinding.FragmentMealsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-
 class MealsFragment : Fragment(R.layout.fragment_meals) {
-    private val viewModel : HomeViewModel by activityViewModels<HomeViewModel>()
+    private val viewModel: HomeViewModel by viewModels<HomeViewModel>()
     private var _binding: FragmentMealsBinding? = null
     private val binding get() = _binding!!
    private val args: MealsFragmentArgs by navArgs()

@@ -18,8 +18,4 @@ interface MealsDao {
     @Delete
     suspend fun delete(meal: Meal)
 
-    @Update
-    suspend fun update(meal: Meal)
-
-
 }

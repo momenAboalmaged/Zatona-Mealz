@@ -19,11 +19,11 @@ class HomeViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
 
-    var Favorites: LiveData<List<Meal>>
+    var favorites: LiveData<List<Meal>>
 
     init {
+        favorites = repository.getFavourite()
         getCategories()
-        Favorites = repository.getFavourite()
     }
 
     private val _searchData: MutableLiveData<List<Meal>> = MutableLiveData()
@@ -33,8 +33,8 @@ class HomeViewModel @Inject constructor(
     val mealDetails: LiveData<MealDetails?> = _mealDetails
 
 
-    private val _data: MutableLiveData<List<Category>> = MutableLiveData()
-    val data: LiveData<List<Category>> = _data
+    private val _catData: MutableLiveData<List<Category>> = MutableLiveData()
+    val catData: LiveData<List<Category>> = _catData
 
 
     private val _mealData: MutableLiveData<List<Meal>> = MutableLiveData()
@@ -47,7 +47,7 @@ class HomeViewModel @Inject constructor(
         try {
             val response = repository.getCategories()
             if (response.isSuccessful) {
-                _data.postValue(response.body()?.categories)
+                _catData.postValue(response.body()?.categories)
                 Log.e("Great request", "getData: Great")
             } else Log.e("Failed request", "getData: Failed")
         } catch (ex: Exception) {
@@ -88,12 +88,6 @@ class HomeViewModel @Inject constructor(
 
     fun removeFavourite(meal: Meal) = viewModelScope.launch { repository.removeFavourite(meal) }
 
-
-    fun update(meal: Meal) =
-        viewModelScope.launch {
-            repository.update(meal)
-        }
-
     fun clearSearchResults() {
         _searchData.value = emptyList()
     }
@@ -105,8 +99,6 @@ class HomeViewModel @Inject constructor(
     }
 
 
-
-
     fun saveUserName(value: String) {
         viewModelScope.launch {
             repository.saveUserName("userName", value)
@@ -116,5 +108,6 @@ class HomeViewModel @Inject constructor(
     fun getUserName(): String? = runBlocking {
         repository.getUserName("userName")
     }
+
 
 }

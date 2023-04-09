@@ -18,13 +18,6 @@ import com.zatona.zatona.databinding.FragmentProfileBinding
 import com.zatona.zatona.ui.auth.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-
 @AndroidEntryPoint
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private var _binding: FragmentProfileBinding? = null

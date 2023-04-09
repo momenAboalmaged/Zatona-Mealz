@@ -1,22 +1,21 @@
 package com.zatona.zatona.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.zatona.zatona.R
 import com.zatona.zatona.databinding.FragmentMealDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-
 class MealDetailsFragment : Fragment(R.layout.fragment_meal_details) {
-    private val viewModel: HomeViewModel by activityViewModels<HomeViewModel>()
+    private val viewModel: HomeViewModel by viewModels<HomeViewModel>()
     private var _binding: FragmentMealDetailsBinding? = null
     private val binding get() = _binding!!
     private val args: MealDetailsFragmentArgs by navArgs()
@@ -44,8 +43,8 @@ class MealDetailsFragment : Fragment(R.layout.fragment_meal_details) {
                     ingredient3.text = it.strIngredient3
                     ingredient4.text = it.strIngredient4
                     Glide.with(view).load(it.strMealThumb)
-                        .transition(DrawableTransitionOptions.withCrossFade())
-                        .error(R.drawable.ic_wifi_broken).transform(CenterCrop())
+                        .error(R.drawable.ic_wifi_broken)
+                        .transform(CenterCrop(), RoundedCorners(32))
                         .placeholder(R.drawable.zatona).transform(CenterCrop())
                         .into(mealIv)
 

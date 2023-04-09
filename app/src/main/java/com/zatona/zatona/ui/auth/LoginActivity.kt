@@ -9,10 +9,7 @@ import com.zatona.zatona.databinding.ActivityLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-
 class LoginActivity : AppCompatActivity() {
-
-
     private lateinit var binding: ActivityLoginBinding
     private lateinit var authNavController: NavController
 
