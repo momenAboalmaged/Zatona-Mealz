@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ghost_white"
+    android:orientation="vertical"
+    tools:context=".ui.auth.RegisterFragment">
+
+    <FrameLayout
+        app:elevation="4dp"
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/Light_grayish_red"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register here"
+            android:textColor="@color/red"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="-15dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/round_corner"
+            android:textAllCaps="false"
+            app:tabIndicatorFullWidth="false" />
+
+
+    </FrameLayout>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/bookings_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
